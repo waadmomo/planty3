@@ -1,22 +1,50 @@
 {% extends "base.html" %}
 
 {% block content %}
-<section class="mb-8">
-  <h2 class="text-xl font-bold mb-4">Choose a Plant</h2>
-  <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
-    {% for plant_id, plant in plants.items() %}
-    <div class="plant-card">
-      <img src="{{ url_for('static', filename='images/' + plant.image) }}" 
-           alt="{{ plant.name }}" 
-           class="plant-image" />
-      <h3 class="text-lg font-bold">{{ plant.name }}</h3>
-      <p class="plant-info">
-        <span class="bg-pastel-yellow tag">{{ plant.difficulty }}</span>
-        : {{ plant.description }}
-      </p>
-      <a href="{{ url_for('plant_care', plant_id=plant_id) }}" class="btn">View Details</a>
+<div class="hero-section">
+    <h1>Welcome to Planty</h1>
+    <p>Your Qatar Plant Helper</p>
+    <div class="search-bar">
+        <input type="text" placeholder="Search for plants...">
+        <button class="search-btn"><i class="fas fa-search"></i></button>
     </div>
-    {% endfor %}
-  </div>
+</div>
+
+<section class="main-content">
+    <div class="section-header">
+        <h2>Find Your Perfect Plant</h2>
+        <div class="filter-buttons">
+            <button class="filter-btn active">All Plants</button>
+            <button class="filter-btn">Easy to Grow</button>
+            <button class="filter-btn">Indoor</button>
+            <button class="filter-btn">Outdoor</button>
+        </div>
+    </div>
+
+    <div class="plant-grid">
+        {% for plant_id, plant in plants.items() %}
+        <div class="plant-card">
+            <div class="plant-image-container">
+                <img src="{{ url_for('static', filename='images/' + plant.image) }}" 
+                     alt="{{ plant.name }}" 
+                     class="plant-image">
+                <div class="difficulty-badge {{ 'easy' if 'Easy' in plant.difficulty else 'moderate' }}">
+                    {{ plant.difficulty }}
+                </div>
+            </div>
+            <div class="plant-info">
+                <h3>{{ plant.name }}</h3>
+                <p>{{ plant.description }}</p>
+                <div class="plant-features">
+                    <span><i class="fas fa-sun"></i> {{ plant.care_instructions.light }}</span>
+                    <span><i class="fas fa-tint"></i> {{ plant.care_instructions.water }}</span>
+                </div>
+                <a href="{{ url_for('plant_care', plant_id=plant_id) }}" class="view-details-btn">
+                    View Details <i class="fas fa-arrow-right"></i>
+                </a>
+            </div>
+        </div>
+        {% endfor %}
+    </div>
 </section>
 {% endblock %}
