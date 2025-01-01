@@ -1,0 +1,40 @@
+{% extends "base.html" %}
+
+{% block title %}{{ plant.name }} Care - Planty 3{% endblock %}
+
+{% block content %}
+<div class="plant-care-container">
+    <div class="plant-header">
+        <img src="{{ url_for('static', filename='images/' + plant.image) }}" 
+             alt="{{ plant.name }}" 
+             class="plant-detail-image">
+        <h1>{{ plant.name }}</h1>
+    </div>
+
+    <div class="care-instructions">
+        <h2>Care Instructions</h2>
+        <div class="care-grid">
+            <div class="care-item">
+                <h3>Water</h3>
+                <p>{{ plant.care_instructions.water }}</p>
+            </div>
+            <div class="care-item">
+                <h3>Light</h3>
+                <p>{{ plant.care_instructions.light }}</p>
+            </div>
+            <div class="care-item">
+                <h3>Temperature</h3>
+                <p>{{ plant.care_instructions.temperature }}</p>
+            </div>
+            <div class="care-item">
+                <h3>Humidity</h3>
+                <p>{{ plant.care_instructions.humidity }}</p>
+            </div>
+            <div class="care-item">
+                <h3>Fertilizer</h3>
+                <p>{{ plant.care_instructions.fertilizer }}</p>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}
