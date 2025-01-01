@@ -1,19 +1,22 @@
 {% extends "base.html" %}
 
-{% block title %}Planty 3 - Home{% endblock %}
-
 {% block content %}
-<div class="plants-grid">
+<section class="mb-8">
+  <h2 class="text-xl font-bold mb-4">Choose a Plant</h2>
+  <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
     {% for plant_id, plant in plants.items() %}
     <div class="plant-card">
-        <img src="{{ url_for('static', filename='images/' + plant.image) }}" 
-             alt="{{ plant.name }}" 
-             class="plant-image">
-        <h2>{{ plant.name }}</h2>
-        <p>{{ plant.description }}</p>
-        <a href="{{ url_for('plant_care', plant_id=plant_id) }}" 
-           class="care-button">Care Instructions</a>
+      <img src="{{ url_for('static', filename='images/' + plant.image) }}" 
+           alt="{{ plant.name }}" 
+           class="plant-image" />
+      <h3 class="text-lg font-bold">{{ plant.name }}</h3>
+      <p class="plant-info">
+        <span class="bg-pastel-yellow tag">{{ plant.difficulty }}</span>
+        : {{ plant.description }}
+      </p>
+      <a href="{{ url_for('plant_care', plant_id=plant_id) }}" class="btn">View Details</a>
     </div>
     {% endfor %}
-</div>
+  </div>
+</section>
 {% endblock %}
