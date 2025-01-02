@@ -4,20 +4,32 @@
 <div class="hero-section">
     <h1>Welcome to Planty</h1>
     <p>Your Qatar Plant Helper</p>
-    <div class="search-bar">
-        <input type="text" placeholder="Search for plants...">
-        <button class="search-btn"><i class="fas fa-search"></i></button>
-    </div>
+    <form class="search-bar" method="GET" action="{{ url_for('home') }}">
+        <input type="text" name="search" placeholder="Search for plants..." value="{{ request.args.get('search', '') }}">
+        <button type="submit" class="search-btn"><i class="fas fa-search"></i></button>
+    </form>
 </div>
 
 <section class="main-content">
     <div class="section-header">
         <h2>Find Your Perfect Plant</h2>
         <div class="filter-buttons">
-            <button class="filter-btn active">All Plants</button>
-            <button class="filter-btn">Easy to Grow</button>
-            <button class="filter-btn">Indoor</button>
-            <button class="filter-btn">Outdoor</button>
+            <a href="{{ url_for('home') }}" 
+               class="filter-btn {% if not request.args.get('filter') %}active{% endif %}">
+                All Plants
+            </a>
+            <a href="{{ url_for('home', filter='easy to grow') }}" 
+               class="filter-btn {% if request.args.get('filter') == 'easy to grow' %}active{% endif %}">
+                Easy to Grow
+            </a>
+            <a href="{{ url_for('home', filter='indoor') }}" 
+               class="filter-btn {% if request.args.get('filter') == 'indoor' %}active{% endif %}">
+                Indoor
+            </a>
+            <a href="{{ url_for('home', filter='outdoor') }}" 
+               class="filter-btn {% if request.args.get('filter') == 'outdoor' %}active{% endif %}">
+                Outdoor
+            </a>
         </div>
     </div>
 
@@ -47,4 +59,10 @@
         {% endfor %}
     </div>
 </section>
+
+{% if not plants %}
+<div class="no-results">
+    <p>No plants found matching your search criteria.</p>
+</div>
+{% endif %}
 {% endblock %}

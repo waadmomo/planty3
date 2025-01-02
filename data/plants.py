@@ -1,80 +1,116 @@
+# -*- coding: utf-8 -*-
+
 plants = {
-    'peppers': {
-        'name': 'Peppers',
-        'image': 'peppers.jpg',
-        'difficulty': 'Moderately easy to plant',
-        'description': 'Requires consistent watering and warm temperatures.',
-        'care_instructions': {
-            'water': 'Regular watering',
-            'light': 'Full sun',
-            'temperature': '65-80F (18-27C)',
-            'humidity': 'Moderate',
-            'fertilizer': 'Every 2 weeks during growing season'
-        }
-    },
-    'tomatoes': {
-        'name': 'Tomatoes',
-        'image': 'tomatoes.jpg',
-        'difficulty': 'Moderately easy to plant',
-        'description': 'Needs full sun and regular pruning.',
-        'care_instructions': {
-            'water': 'Regular watering',
-            'light': 'Full sun',
-            'temperature': '65-85F (18-29C)',
-            'humidity': 'Moderate',
-            'fertilizer': 'Every 2 weeks'
-        }
-    },
     'aloe_vera': {
         'name': 'Aloe Vera',
+        'description': 'A succulent plant species with healing properties.',
         'image': 'aloe_vera.jpg',
-        'difficulty': 'Easy to plant',
-        'description': 'Requires minimal watering and indirect sunlight.',
+        'difficulty': 'Easy to grow',
         'care_instructions': {
-            'water': 'Water when soil is completely dry',
-            'light': 'Indirect sunlight',
-            'temperature': '55-80F (13-27C)',
-            'humidity': 'Low to moderate',
-            'fertilizer': 'Every 2-3 months in growing season'
+            'light': 'Bright indirect light',
+            'water': 'Water every 2-3 weeks',
+            'placement': 'Indoor',
+            'soil': 'Well-draining soil',
+            'temperature': '13-27°C',
+            'humidity': 'Low to moderate'
         }
     },
     'snake_plant': {
         'name': 'Snake Plant',
+        'description': 'An air-purifying plant that is very easy to maintain.',
         'image': 'snake_plant.jpg',
-        'difficulty': 'Easy to plant',
-        'description': 'Tolerates low light and infrequent watering.',
+        'difficulty': 'Easy to grow',
         'care_instructions': {
-            'water': 'Allow soil to dry between waterings',
             'light': 'Low to bright indirect light',
-            'temperature': '60-85F (15-29C)',
-            'humidity': 'Any humidity level',
-            'fertilizer': 'Once per month during growing season'
-        }
-    },
-    'lavender': {
-        'name': 'Lavender',
-        'image': 'lavender.jpg',
-        'difficulty': 'Moderately easy to plant',
-        'description': 'Prefers well-drained soil and full sun.',
-        'care_instructions': {
-            'water': 'Water when top inch of soil is dry',
-            'light': 'Full sun',
-            'temperature': '60-70F (15-21C)',
-            'humidity': 'Low',
-            'fertilizer': 'Light feeding in spring'
+            'water': 'Water every 2-4 weeks',
+            'placement': 'Indoor',
+            'soil': 'Well-draining potting mix',
+            'temperature': '15-27°C',
+            'humidity': 'Any humidity level'
         }
     },
     'mint': {
         'name': 'Mint',
+        'description': 'A fragrant herb that grows quickly and spreads easily.',
         'image': 'mint.jpg',
-        'difficulty': 'Easy to plant',
-        'description': 'Grows quickly and requires regular watering.',
+        'difficulty': 'Easy to grow',
         'care_instructions': {
-            'water': 'Keep soil consistently moist',
             'light': 'Full sun to partial shade',
-            'temperature': '65-70F (18-21C)',
-            'humidity': 'Moderate',
-            'fertilizer': 'Every 4-6 weeks during growing season'
+            'water': 'Keep soil moist',
+            'placement': 'Outdoor',
+            'soil': 'Rich, well-draining soil',
+            'temperature': '18-24°C',
+            'humidity': 'Moderate'
+        }
+    },
+    'tomatoes': {
+        'name': 'Tomatoes',
+        'description': 'A popular vegetable plant that needs regular care.',
+        'image': 'tomatoes.jpg',
+        'difficulty': 'Moderately easy to grow',
+        'care_instructions': {
+            'light': 'Full sun',
+            'water': 'Regular watering',
+            'placement': 'Outdoor',
+            'soil': 'Rich, well-draining soil',
+            'temperature': '20-27°C',
+            'humidity': 'Moderate'
+        }
+    },
+    'peace_lily': {
+        'name': 'Peace Lily',
+        'description': 'Beautiful flowering plant that purifies air.',
+        'image': 'peace_lily.jpg',
+        'difficulty': 'Easy to grow',
+        'care_instructions': {
+            'light': 'Low to moderate indirect light',
+            'water': 'Keep soil moist',
+            'placement': 'Indoor',
+            'soil': 'Well-draining potting mix',
+            'temperature': '18-30°C',
+            'humidity': 'High'
+        }
+    },
+    'basil': {
+        'name': 'Basil',
+        'description': 'Aromatic herb perfect for cooking.',
+        'image': 'basil.jpg',
+        'difficulty': 'Easy to grow',
+        'care_instructions': {
+            'light': 'Full sun',
+            'water': 'Regular watering',
+            'placement': 'Indoor',
+            'soil': 'Rich, well-draining soil',
+            'temperature': '20-25°C',
+            'humidity': 'Moderate'
+        }
+    },
+    'spider_plant': {
+        'name': 'Spider Plant',
+        'description': 'Easy-care plant with arching leaves.',
+        'image': 'spider_plant.jpg',
+        'difficulty': 'Easy to grow',
+        'care_instructions': {
+            'light': 'Moderate to bright indirect light',
+            'water': 'Water when top soil is dry',
+            'placement': 'Indoor',
+            'soil': 'Well-draining potting mix',
+            'temperature': '18-24°C',
+            'humidity': 'Moderate'
+        }
+    },
+    'lavender': {
+        'name': 'Lavender',
+        'description': 'Fragrant herb with beautiful purple flowers.',
+        'image': 'lavender.jpg',
+        'difficulty': 'Moderately easy to grow',
+        'care_instructions': {
+            'light': 'Full sun',
+            'water': 'Low water needs',
+            'placement': 'Outdoor',
+            'soil': 'Well-draining sandy soil',
+            'temperature': '18-24°C',
+            'humidity': 'Low'
         }
     }
 }

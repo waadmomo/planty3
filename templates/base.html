@@ -1,36 +1,49 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>{% block title %}Planty - Qatar Plant Helper{% endblock %}</title>
-  <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}" />
-  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet" />
-  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet" />
-  <link href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap" rel="stylesheet" />
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Planty - Your Plant Guide</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&family=Pacifico&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
 </head>
-<body class="font-roboto bg-gray-100">
-  <header class="bg-custom-green text-white p-4">
-    <div class="container mx-auto flex justify-between items-center">
-      <h1 class="text-2xl font-bold font-pacifico">Planty</h1>
-      <nav>
-        <ul class="flex space-x-4">
-          <li><a class="hover:underline" href="{{ url_for('home') }}">Home</a></li>
-          <li><a class="hover:underline" href="#">About</a></li>
-          <li><a class="hover:underline" href="#">Contact</a></li>
-        </ul>
-      </nav>
-    </div>
-  </header>
+<body>
+    <header>
+        <div class="container">
+            <a href="{{ url_for('home') }}" class="logo">Planty</a>
+            <nav>
+                <ul>
+                    <li><a href="{{ url_for('home') }}">Home</a></li>
+                    <li><a href="#">About</a></li>
+                    <li><a href="#">Contact</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
 
-  <main class="container mx-auto p-4">
-    {% block content %}{% endblock %}
-  </main>
+    <main>
+        {% block content %}{% endblock %}
+    </main>
 
-  <footer class="bg-custom-green text-white p-4 mt-8">
-    <div class="container mx-auto text-center">
-      <p>© 2025 Planty. All rights reserved.</p>
-    </div>
-  </footer>
+    <footer>
+        <p>&copy; 2025 Planty. All rights reserved.</p>
+    </footer>
+
+    <script>
+    document.addEventListener('DOMContentLoaded', function() {
+        const searchInput = document.querySelector('.search-bar input');
+        let searchTimeout;
+
+        if (searchInput) {
+            searchInput.addEventListener('input', function() {
+                clearTimeout(searchTimeout);
+                searchTimeout = setTimeout(() => {
+                    document.querySelector('.search-bar').submit();
+                }, 500);
+            });
+        }
+    });
+    </script>
 </body>
 </html>
