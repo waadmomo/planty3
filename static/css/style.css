@@ -353,3 +353,50 @@ footer {
         font-size: 1.5rem;
     }
 }
+.plant-care-container {
+    padding: 2rem;
+}
+
+.plant-header {
+    display: flex;
+    align-items: center;
+    gap: 2rem;
+    margin-bottom: 2rem;
+}
+
+.plant-detail-image {
+    width: 150px;
+    height: 150px;
+    object-fit: cover;
+    border-radius: 50%;
+}
+
+.care-instructions,
+.planting-steps,
+.materials-needed {
+    margin-bottom: 2rem;
+}
+
+.care-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    gap: 1rem;
+}
+
+.care-item {
+    background: #f8f9fa;
+    padding: 1rem;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.planting-steps ol,
+.materials-needed ul {
+    padding-left: 1.5rem;
+    list-style-position: inside;
+}
+
+.planting-steps li,
+.materials-needed li {
+    margin-bottom: 0.5rem;
+}

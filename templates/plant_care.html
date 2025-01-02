@@ -36,5 +36,37 @@
             </div>
         </div>
     </div>
+
+    <div class="planting-steps">
+        <h2>Steps to Plant</h2>
+        <ol>
+            {% for step in plant.planting_steps %}
+            <li>{{ step }}</li>
+            {% endfor %}
+        </ol>
+    </div>
+
+    <div class="materials-needed">
+        <h2>Materials Needed</h2>
+        <ul>
+            {% for material in plant.materials_needed %}
+            <li>{{ material }}</li>
+            {% endfor %}
+        </ul>
+    </div>
+
+    <div class="reminders">
+        <h2>Set a Reminder</h2>
+        <form method="POST" action="#">
+            <button type="submit" class="btn btn-primary">Set a Reminder</button>
+        </form>
+
+        <h3>Existing Reminders:</h3>
+        <ul>
+            {% for reminder in reminders %}
+            <li>{{ reminder }}</li>
+            {% endfor %}
+        </ul>
+    </div>
 </div>
 {% endblock %}
